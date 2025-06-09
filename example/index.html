@@ -1,0 +1,27 @@
+<head>
+  <style> body { margin: 0 } </style>
+
+<!--  <script src="../dist/d3-force-grid.js"></script>-->
+<!--  <script>forceGrid = d3.forceGrid</script>-->
+</head>
+
+<body>
+<script type="module">
+  import forceGrid from 'https://esm.sh/d3-force-grid';
+  import { forceCollide } from 'https://esm.sh/d3-force';
+  import d3ForcePod from 'https://esm.sh/d3-force-pod';
+
+  const gridForce = forceGrid()
+    .step(100)
+    .considerAlpha(true);
+
+  const simulationPod = new d3ForcePod(document.body)
+    .genNodes()
+    .addForce(gridForce)
+    .addForce(forceCollide(d => d.r));
+
+  simulationPod.simulation()
+    .alphaDecay(0.03)
+    .velocityDecay(0.1);
+</script>
+</body>
