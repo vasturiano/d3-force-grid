@@ -1,6 +1,6 @@
 {
   "name": "d3-force-grid",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "A force to snap nodes to a grid for the d3-force simulation engine.",
   "keywords": [
     "d3",
